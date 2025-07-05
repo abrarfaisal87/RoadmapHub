@@ -1,0 +1,2 @@
+ you keep the A column empty in sheets, Then when mapping the data for google sheets in bit flows, select colmumn A and set a value of your own.
+ It will act like a default value everytime a new Row is added in sheets.
