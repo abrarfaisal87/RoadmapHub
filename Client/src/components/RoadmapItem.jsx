@@ -12,7 +12,7 @@ const RoadmapItem = ({ selectedStatus, selectedCategory }) => {
   useEffect(() => {
     const fetchRoadmaps = async () => {
       try {
-        const res = await axios.get("https://roadmap-hub-backend-np65742q1-abrar-faisals-projects.vercel.app/api/roadmap");
+        const res = await axios.get("http://localhost:3434//api/roadmap");
         if (res.data && res.data.length > 0) {
           setRoadmaps(res.data);
         }
