@@ -12,7 +12,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://roadmap-hub-backend-np65742q1-abrar-faisals-projects.vercel.app//api/auth/signup", {
+      const res = await axios.post("https://roadmap-hub-backend-np65742q1-abrar-faisals-projects.vercel.app/api/auth/signup", {
         email,
         password,
       });
