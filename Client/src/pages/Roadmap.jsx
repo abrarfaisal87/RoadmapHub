@@ -28,7 +28,7 @@ const Roadmap = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:3434//api/roadmap/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/roadmap/${id}`
         );
         if (response.data.success) {
           setRoadmap({
@@ -42,7 +42,7 @@ const Roadmap = () => {
         }
 
         const commentResponse = await axios.get(
-          `http://localhost:3434//api/comments/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/comments/${id}`
         );
         if (commentResponse.data.success) {
           setComments(commentResponse.data.comments || []);
@@ -70,7 +70,7 @@ const Roadmap = () => {
     try {
       setUpvoteLoading(true);
       const response = await axios.post(
-        `http://localhost:3434//api/roadmap/${id}/upvote`,
+        `https://roadmap-hub-backend.vercel.app/api/roadmap/${id}/upvote`,
         {},
         {
           headers: { Authorization: `Bearer ${user.token}` },
@@ -78,7 +78,7 @@ const Roadmap = () => {
       );
       if (response.data.success) {
         const updatedResponse = await axios.get(
-          `http://localhost:3434//api/roadmap/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/roadmap/${id}`
         );
 
         // Refetch roadmap to get updated upvote_count
@@ -120,20 +120,20 @@ const Roadmap = () => {
       setCommentLoading(true);
       setError(null);
       const response = await axios.post(
-        `http://localhost:3434//api/comments/${id}`,
+        `https://roadmap-hub-backend.vercel.app/api/comments/${id}`,
         { text: commentText, parent_comment_id: null },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
 
       if (response.data.success) {
         const commentResponse = await axios.get(
-          `http://localhost:3434//api/comments/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/comments/${id}`
         );
         if (commentResponse.data.success) {
           setComments(commentResponse.data.comments || []);
         }
         const roadmapResponse = await axios.get(
-          `http://localhost:3434//api/roadmap/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/roadmap/${id}`
         );
         if (roadmapResponse.data.success) {
           setRoadmap({
@@ -171,7 +171,7 @@ const Roadmap = () => {
       setCommentLoading(true);
       setError(null);
       const response = await axios.post(
-        `http://localhost:3434//api/comments/${id}`,
+        `https://roadmap-hub-backend.vercel.app/api/comments/${id}`,
         { text: replyText, parent_comment_id: parentId },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
@@ -179,14 +179,14 @@ const Roadmap = () => {
 
       if (response.data.success) {
         const commentsResponse = await axios.get(
-          `http://localhost:3434//api/comments/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/comments/${id}`
         );
         console.log("Fetched comments:", commentsResponse.data.comments);
         if (commentsResponse.data.success) {
           setComments(commentsResponse.data.comments || []);
         }
         const roadmapResponse = await axios.get(
-          `http://localhost:3434//api/roadmap/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/roadmap/${id}`
         );
         if (roadmapResponse.data.success) {
           setRoadmap({
@@ -222,19 +222,19 @@ const Roadmap = () => {
       setError(null);
       console.log("Deleting comment:", commentId);
       const response = await axios.delete(
-        `http://localhost:3434//api/comments/${commentId}`,
+        `https://roadmap-hub-backend.vercel.app/api/comments/${commentId}`,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
       console.log("Delete response:", response.data);
       if (response.data.success) {
         const commentsResponse = await axios.get(
-          `http://localhost:3434//api/comments/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/comments/${id}`
         );
         if (commentsResponse.data.success) {
           setComments(commentsResponse.data.comments || []);
         }
         const roadmapResponse = await axios.get(
-          `http://localhost:3434//api/roadmap/${id}`
+          `https://roadmap-hub-backend.vercel.app/api/roadmap/${id}`
         );
         if (roadmapResponse.data.success) {
           setRoadmap({

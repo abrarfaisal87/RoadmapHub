@@ -18,7 +18,7 @@ const Filter = ({
     const fetchFilters = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3434//api/roadmap/filters"
+          "https://roadmap-hub-backend.vercel.app/api/roadmap/filters"
         );
         if (res.data.success) {
           setStatuses(res.data.status);
