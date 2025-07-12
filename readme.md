@@ -4,7 +4,6 @@
 
 This is a full-stack application where users can browse feature roadmap items, upvote them, and engage in a threaded comment system with replies, edit, and delete support.
 
-🔗 **GitHub Repo:** [https://github.com/yourusername/roadmaphub](https://github.com/yourusername/roadmaphub)
 
 ---
 
