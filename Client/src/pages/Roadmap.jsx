@@ -8,7 +8,7 @@ const Roadmap = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
- console.log(user);
+  console.log(user);
 
   //state for roadmap data and laoding
   const [roadmap, setRoadmap] = useState(null);
